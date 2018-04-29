@@ -1,3 +1,4 @@
+## Python gitignore
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -99,3 +100,30 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+## Matlab gitignore
+# Windows default autosave extension
+*.asv
+
+# OSX / *nix default autosave extension
+*.m~
+
+# Compiled MEX binaries (all platforms)
+*.mex*
+
+# Packaged app and toolbox files 
+*.mlappinstall 
+*.mltbx 
+  
+# Generated helpsearch folders 
+helpsearch*/ 
+
+# Simulink code generation folders
+slprj/
+sccprj/
+
+# Simulink autosave extension
+*.autosave
+
+# Octave session info
+octave-workspace
