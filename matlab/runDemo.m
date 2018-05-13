@@ -27,7 +27,6 @@ Rmult = vec2mat(K*n, s);
 % 3- With the Fourier domain:
 k_flipped = [1 -1];
 Kf        = psf2otf(k_flipped, [s, s]);
-Kf_fft    = fft(k);
 Nf        = fft2(N);
 
 Rf = Kf .* Nf;
@@ -37,19 +36,18 @@ Rfourier = ifft2(Rf);
 fprintf(' Part A\nWith valid convolution we obtain: ');
 Rconv
 disp('With large matrix multiplication: ');
-Rmult
+Rmult'
 disp('With the Fourier transform operation: ');
 Rfourier
 fprintf('** all valid entries are equivalent \n (the last column is nonvalid in this example) **\n');
 
+%% *B*
 
 clearvars;
 
-
-%% *B*
 % Read the NIR image to be deblurred, and the RGB guide
-N_b = im2double(imread('nir_blurry.tiff'));
-RGB = im2double(imread('rgb.tiff'));
+N_b = im2double(imread('../input/nir_blurry.tiff'));
+RGB = im2double(imread('../input/rgb.tiff'));
 % For simplicity we only use the color luminance
 Y = mean(RGB,3);
 % Rescale
@@ -63,7 +61,6 @@ subplot 122; imshow(RGB); title('Color guide');
 % constant blur across the image, and that the blur is Gaussian
 % We obtain an estimate of sigma = 0.394
 
-tic;
 %%%% blur kernel %%%%
 sigma = 0.394;
 b = fspecial('Gaussian',ceil(2*3*sigma+1),sigma);
@@ -78,6 +75,9 @@ y1 = conv2(Y, f1, 'same');
 y2 = conv2(Y, f2, 'same');
 
 % Fourier domain optimization solution:
+
+tic; 
+
 f1F = psf2otf(f1, size(Y));
 f2F = psf2otf(f2, size(Y));
 
@@ -89,7 +89,7 @@ N_bF = psf2otf(N_b, size(Y));
 
 % EQ (15)
 I_x = conj(f1F) .* y1F + conj(f2F) .* y2F + conj(bF) .* N_bF;
-C   = 1.0 * lambda .* (abs(f1F).^2 + abs(f2F).^2 + abs(bF).^2) + eps;
+C   = lambda .* (abs(f1F).^2 + abs(f2F).^2 + abs(bF).^2) + eps;
 
 NF = I_x ./ C ;
 N = abs(fftshift(ifft2(NF)));
