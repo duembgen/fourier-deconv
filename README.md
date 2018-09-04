@@ -12,8 +12,8 @@ This repository contains the implementation of the technical report *How to Solv
 
 This repository contains the following scripts: 
 
-- python/Deconvolution.ipynb
-- matlab/Deconvolution.m
+- python/Convolution.ipynb
+- matlab/Convolution.m
 
 Scripts for visualizing the convolution in space and Fourier domains. 
 
