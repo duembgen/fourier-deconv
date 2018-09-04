@@ -6,10 +6,36 @@ This repository contains the implementation of the technical report *How to Solv
 
 - Majed El Helou (majed.elhelou@epfl.ch)
 - Frederike Dümbgen (frederike.duembgen@epfl.ch)
+- Prof. Sabine Süsstrunk
+
+## Overview
+
+This repository contains the following scripts: 
+
+- python/Deconvolution.ipynb
+- matlab/Deconvolution.m
+
+Scripts for visualizing the convolution in space and Fourier domains. 
+
+- python/Optimization.ipynb
+- matlab/Optimization.m
+
+Script for solving the image debluring example in Fourier domain.
+
+- python/tools.py
+- matlab/tools.m
+
+Tools for plotting and other basic operations. 
 
 ## Contribute
 
 We are happy about contributions of any form (implementation in different programming language, improvement of existing code, etc.). Please submit a pull request if you have something to be added to the code, or send us an e-mail. 
+
+## Acknowledgments
+
+We would like to thank Dr.  Zahra Sadeghipoor,  Dr.  Nikolaos Arvanitopoulos and Dr.
+Radhakrishna Achanta for valuable discussions and advice. The authors also thank Alexandre Boucaud for providing a python implementation of psf2otf. 
+
 
 ## License
 
