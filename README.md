@@ -23,7 +23,9 @@ Scripts for visualizing the convolution in space and Fourier domains.
 Script for solving the image debluring example in Fourier domain.
 
 - python/tools.py
-- matlab/tools.m
+- python/psf2otf.py
+- matlab/sh_computation.m
+- matlab/vec2mat.m
 
 Tools for plotting and other basic operations. 
 
