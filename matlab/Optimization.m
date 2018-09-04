@@ -1,5 +1,6 @@
-%% April 2018
-%% Authors: Majed El Helou, Frederike Dumbgen
+%% Optimization in Fourier domain
+% Date created: April 2018
+% Authors: Majed El Helou, Frederike Dumbgen
 
 % In section *A* we illustrate the 2D convolution with both the matrix
 % multiplication setup and in the Fourier domain
@@ -22,7 +23,7 @@ Rconv = conv2(N, flip(k, 2), 'valid');
 K = gallery('circul', [k zeros(1, s^2-2)] );
 n = reshape(N', [s^2, 1]); %row by row vectorization
 
-Rmult = vec2mat(K*n, s);
+Rmult = vec2mat(K*n, s)';
 
 % 3- With the Fourier domain:
 k_flipped = [1 -1];
@@ -36,7 +37,7 @@ Rfourier = ifft2(Rf);
 fprintf(' Part A\nWith valid convolution we obtain: ');
 Rconv
 disp('With large matrix multiplication: ');
-Rmult'
+Rmult
 disp('With the Fourier transform operation: ');
 Rfourier
 fprintf('** all valid entries are equivalent \n (the last column is nonvalid in this example) **\n');
@@ -96,18 +97,19 @@ N = abs(fftshift(ifft2(NF)));
 
 timeTotal = toc;
 
-% Comparing results:
+%% Comparing results:
 sh_b = sh_computation(N_b);
 sh_d = sh_computation(N);
 
-figure; subplot 121; imshow(N_b); title(['Out-of-focus NIR image, sharpness = ' num2str(sh_b)]);
-subplot 122; imshow(N); title(['Deblurred NIR image, sharpness = ' num2str(sh_d)]);
+figure('Position', [0, 1000, 1500, 1000]); 
+subplot 221; imshow(N_b); title(sprintf('Out-of-focus NIR image, sharpness = %2.4f', sh_b));
+subplot 222; imshow(N); title(sprintf('Deblurred NIR image, sharpness = %2.4f', sh_d));
 
-figure; subplot 121; imshow(N_b(500:900, 650:1200)); title(['Out-of-focus CROP']);
-subplot 122; imshow(N(500:900, 650:1200)); title(['Deblurred CROP']);
+subplot 223; imshow(N_b(500:900, 650:1200)); title(['Out-of-focus CROP']);
+subplot 224; imshow(N(500:900, 650:1200)); title(['Deblurred CROP']);
 
 
-fprintf(['\n Part B\nTotal time for all the set up and solving the optimization:\n' num2str(timeTotal) ' sec\n']);
+fprintf('\n Part B\nDone with optimization after %2.2f s.\n', timeTotal);
 
 
 

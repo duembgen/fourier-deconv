@@ -1,5 +1,3 @@
-
-
 % Created by Zahra Sadeghipoor on 10/29/2014
 % All rights reserved for EPFL.
 % compute the sharpness of the image using the method descried in "The blur effect: perception
