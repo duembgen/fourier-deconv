@@ -4,7 +4,7 @@ This repository contains the implementation of the technical report *How to Solv
 
 ## Authors
 
-- Majed El Helou (majed.elhelou@epfl.ch)
+- [Majed El Helou](http://majedelhelou.github.io/)
 - Frederike Dümbgen (frederike.duembgen@epfl.ch)
 - Prof. Sabine Süsstrunk
 
