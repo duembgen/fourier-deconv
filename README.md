@@ -43,10 +43,13 @@ Radhakrishna Achanta for valuable discussions and advice. The authors also thank
 
 This source code is provided under the MIT license. 
 
-If you are using this code or parts of it for your own implementation, please cite it as follows:
-
+If you are using this code or parts of it in your own implementation, please cite it as follows:
 
 ``` 
-bibtex comes here
-
+@article{el2018fourier,
+  title={Fourier-domain optimization for image processing},
+  author={El Helou, Majed and D{\"u}mbgen, Frederike and Achanta, Radhakrishna and S{\"u}sstrunk, Sabine},
+  journal={arXiv preprint arXiv:1809.04187},
+  year={2018}
+}
 ```
