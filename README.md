@@ -1,12 +1,13 @@
-# Fourier image optimization and deconvolution
+# Fourier-domain image optimization and deconvolution
 
-This repository contains the implementation of the technical report *How to Solve Convex Image Optimization and Deconvolution Efficiently in the Fourier Domain*, available on arXiv. 
+This repository contains the implementation of the technical report on *How to Solve Convex Image Optimization and Deconvolution Efficiently in the Fourier Domain*, available [online](https://arxiv.org/abs/1809.04187) on arXiv. 
 
 ## Authors
 
 - [Majed El Helou](http://majedelhelou.github.io/)
 - Frederike Dümbgen (frederike.duembgen@epfl.ch)
-- Prof. Sabine Süsstrunk
+- Radhakrishna Achanta
+- Sabine Süsstrunk
 
 ## Overview
 
